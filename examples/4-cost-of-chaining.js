@@ -3,6 +3,9 @@ Using unnecessary then chains can slow your application. There is not
 a big difference, but if it exists in a critical path in your application
 it can be painful. For example using this pattern in a service middleware
 which handles lot of requests in the same time.
+
+Memory allocation and perf overhead 1 promise is around 60 byte
+
 This pattern actually used such location:
 https://github.com/villadora/express-http-proxy/blob/master/index.js
  */

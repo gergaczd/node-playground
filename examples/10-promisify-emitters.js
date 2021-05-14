@@ -17,8 +17,9 @@ const subscribeOnce = async () => {
 const subscribeFor = async () => {
   for await (const [arg] of on(emitter, 'something')) {
     console.log('fancy processing', arg);
-    await setTimeout(100);
-    console.log('waited in fancy', arg);
+    await setTimeout(100).then(() => {
+      console.log('waited in fancy', arg);
+    });
   }
 }
 
