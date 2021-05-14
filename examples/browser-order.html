@@ -1,0 +1,21 @@
+<html>
+<head></head>
+<body>
+  <button>Click me</button>
+<script>
+  const button = document.querySelector('button');
+  button.addEventListener('click', () => {
+    Promise.resolve().then(() => console.log('Microtask 1'));
+    console.log('Listener 1');
+  });
+
+  button.addEventListener('click', () => {
+    Promise.resolve().then(() => console.log('Microtask 2'));
+    console.log('Listener 2');
+  });
+  //Click the button on the UI vs run button.click()
+  //what is the difference?
+  //button.click();
+</script>
+</body>
+</html>
